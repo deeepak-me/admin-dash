@@ -1,40 +1,52 @@
-import { DriveFolderUploadOutlined } from '@mui/icons-material';
-import { useState } from 'react';
-import Navbar from '../../components/navbar/Navbar';
-import Sidebar from '../../components/sidebar/Sidebar';
-import './new.scss';
+import { DriveFolderUploadOutlined } from "@mui/icons-material";
+import { useState } from "react";
+import Navbar from "../../components/navbar/Navbar";
+import Sidebar from "../../components/sidebar/Sidebar";
+import "./new.scss";
 
-const New = ({inputs,title}) => {
-
-  const [file, setFile] = useState("")
+const New = ({ inputs, title }) => {
+  const [file, setFile] = useState("");
 
   return (
     <div className="new">
       <Sidebar />
-      <div className='newContainer'>
+      <div className="newContainer">
         <Navbar />
         <div className="top">
           <h1>{title}</h1>
         </div>
         <div className="bottom">
           <div className="left">
-            <img src={file ? URL.createObjectURL(file) :"https://www.freeiconspng.com/thumbs/no-image-icon/no-image-icon-6.png"} alt="" />
+            <img
+              src={
+                file
+                  ? URL.createObjectURL(file)
+                  : "https://www.freeiconspng.com/thumbs/no-image-icon/no-image-icon-6.png"
+              }
+              alt=""
+            />
           </div>
           <div className="right">
             <form>
               <div className="formInput">
-                <label htmlFor='file' >
-                  Image:<DriveFolderUploadOutlined className='icon'/>
+                <label htmlFor="file">
+                  Image:
+                  <DriveFolderUploadOutlined className="icon" />
                 </label>
-                <input type="file" id='file' onChange={e=>setFile(e.target.files[0])} style={{display:"none"}}/>
+                <input
+                  type="file"
+                  id="file"
+                  onChange={(e) => setFile(e.target.files[0])}
+                  style={{ display: "none" }}
+                />
               </div>
 
-              {inputs.map((input) =>(
+              {inputs.map((input) => (
                 <div className="formInput" key={input.id}>
                   <label>{input.label}</label>
-                  <input type={input.type} placeholder={input.placeholder}/>
+                  <input type={input.type} placeholder={input.placeholder} />
                 </div>
-              ))}  
+              ))}
 
               <button>Send</button>
             </form>
@@ -42,7 +54,7 @@ const New = ({inputs,title}) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default New
+export default New;
