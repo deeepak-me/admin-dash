@@ -22,9 +22,9 @@
             input{
                 border: none;
                 outline: none;
-                background-color: transparent;
+                background: transparent;
 
-                &placeholder{
+                &::placeholder{
                     font-size: 12px;
                 }
             }
