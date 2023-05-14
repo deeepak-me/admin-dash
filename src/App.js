@@ -10,8 +10,7 @@ import { useContext } from "react";
 import { DarkModeContext } from "./context/darkModeContext";
 
 function App() {
-
-  const {darkMode} = useContext(DarkModeContext);
+  const { darkMode } = useContext(DarkModeContext);
 
   return (
     <div className={darkMode ? "app dark" : "app"}>
